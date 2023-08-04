@@ -1,0 +1,14 @@
+Michael Regan Student ID: 2211211
+I hereby declare all work as my own as by DCU plagiarism policy
+JavaSoc is a decentralized social media platform where users have an inbox and an outbox.
+The Person instances are the users of JavaSoc and can send Activities to one another . Activities are actions that carry the data of the person who is sending them, a map of people called audience who will receive
+the Activity in there inbox, a streamObject(a post on JavaSoc) and a unique URI to identify the action. BasicActivity implements Activity and is the most basic activity that extends all other Activity's. 
+CreateActivity is the action of creating a streamObject. DeleteActivity is a delete action whereby a person sets a streamObject's deleted boolean to true. Making it unable to be seen by other people after passing it to the method response() in their inbox.
+FollowActivity is a follow action whereby the sender updates there following with the person they wish to follow and when that person receives that FollowingActivity in their inbox they update there followers.
+UnfollowActivity preforms the unfollowing action whereby the sender removes person2 from their following and person2 removes person1 from their followers.
+LikeActivity preforms a like action whereby a person likes a streamObject.
+The Outbox1 class which implements Outbox(interface) is a storage associated with a person where activities are sent. Activities are created by a user and then stored in the queue messages using send(). deliveredNext() will then push 
+Activities out of messages and deliver them in the inbox's of the people in the Activities audience. A message will be printed to terminal when send() and deliverNext() are called.
+The Inbox1 class which  implements inbox is a storage associated with a person where activities are sent to be received and acted upon by the Person. Activities are received through the method receive() and are stored in the queue messages.
+Activities are popped off the queue in readNext() and a message is printed to console. Activities are then handled in response() where the are checked to determine which specific ancestor of activity they are and 
+then the activities functionality is implemented. ClientApp is a demonstration of all the components of JavaSoc comping together.

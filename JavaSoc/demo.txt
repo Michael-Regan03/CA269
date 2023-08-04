@@ -1,0 +1,98 @@
+mregan25 added
+- URI: https://JavaSoc.com/mregan25
+- username: mregan25
+- name: michael
+- summary: computer science student
+
+ok789 added
+- URI: https://JavaSoc.com/ok789
+- username: ok789
+- name: oliwia
+- summary: Interior designer
+
+regan25 adds a FollowActivity to OutBox
+-URI: https://JavaSoc.com/mregan25/activity1
+-follower: mregan25
+-following: ok789
+
+mregan25 Outbox delivery
+-https://JavaSoc.com/mregan25/activity1 posted
+
+ok789 Inbox delivery
+-https://JavaSoc.com/mregan25/activity1
+
+ok789 reads a FollowActivity from Inbox
+-added mregan25 to follower list
+
+ok789 adds a FollowActivity to OutBox
+-URI: https://JavaSoc.com/ok789/activity2
+-follower: ok789
+-following: mregan25
+
+ok789 Outbox delivery
+-https://JavaSoc.com/ok789/activity2 posted
+
+mregan25 Inbox delivery
+-https://JavaSoc.com/ok789/activity2
+
+mregan25 reads a FollowActivity from Inbox
+-added ok789 to follower list
+
+mregan25 adds a CreateActivity to OutBox
+-URI: https://JavaSoc.com/mregan25/activity3
+-Audience: followers
+-Likes: null
+-content: my first post
+-name: I love JavaSoc
+-deleted: false
+
+mregan25 Outbox delivery
+-https://JavaSoc.com/mregan25/activity3 posted
+
+ok789 Inbox delivery
+-https://JavaSoc.com/mregan25/activity3
+
+ok789 reads a CreateActivity from Inbox
+-load https://JavaSoc.com/mregan25/activity3
+
+ok789 adds a LikeActivity to OutBox
+oliwia has liked,I love JavaSoc
+ok789 OutBox delivery
+-https://JavaSoc.com/ok789/activity4 posted
+
+mregan25 Inbox delivery
+-https://JavaSoc.com/ok789/activity4
+
+mregan25 reads a LikeActivity from Inbox
+-https://JavaSoc.com/ok789/activity4 liked your post
+
+mregan25 adds a DeleteActivity to OutBox
+-URI: https://JavaSoc.com/mregan25/activity5
+-Audience: followers
+-Likes: ok789
+-content: my first post
+-name: I love JavaSoc
+-deleted: true
+
+mregan25 Outbox delivery
+-https://JavaSoc.com/mregan25/activity5 posted
+
+ok789 Inbox delivery
+-https://JavaSoc.com/mregan25/activity5
+
+ok789 reads a DeleteActivity from Inbox
+-michael deleted I love JavaSoc
+
+mregan25 adds a UnfollowActivity to OutBox
+-URI: https://JavaSoc.com/mregan25/activity6
+-Unfollower: mregan25
+-Unfollowing: ok789
+
+mregan25 Outbox delivery
+-https://JavaSoc.com/mregan25/activity6 posted
+
+ok789 Inbox delivery
+-https://JavaSoc.com/mregan25/activity6
+
+ok789 reads a UnfollowActivity from Inbox
+-unadded mregan25 from follower list
